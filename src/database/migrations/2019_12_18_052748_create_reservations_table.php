@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateReservationsTable extends Migration
+class CreateReservationsTable extends Migration;
 {
     /**
      * Run the migrations.
@@ -15,9 +15,9 @@ class CreateReservationsTable extends Migration
     {
         Schema::create('reservations', function (Blueprint $table) {
             $table->increments('id');
-            $table->unsignedIntegner('room_id')->comment('部屋番号');
+            $table->unsignedInteger('room_id')->comment('部屋番号');
             $table->dateTime('start_at')->comment('開始時間');
-            $table->dateTime('end_at')->comment('終了時間')
+            $table->dateTime('end_at')->comment('終了時間');
             $table->timestamps();
         });
     }
