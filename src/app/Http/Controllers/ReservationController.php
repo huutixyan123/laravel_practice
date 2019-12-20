@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\ReservationRequest;
 use Illuminate\Http\Request;
+use DB;
 
 class ReservationController extends Controller
 {

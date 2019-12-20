@@ -1,7 +1,7 @@
 <?php
 
 Route::get('/', function () {
-    return view('reservation');
+    return view ('reservation');
 });
 
 Route::get('reservation', 'ReservationController@create'); // 入力フォーム

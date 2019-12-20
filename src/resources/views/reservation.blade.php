@@ -1,7 +1,17 @@
-<html>
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Document</title>
+    </head>
+
 <body>
+
     <form method="POST" action="/reservation">
         @csrf
+
         <!-- 完了メッセージ -->
         @if (session('result'))
             <div style="color:green;">
@@ -9,12 +19,13 @@
             </div>
             <br>
         @endif
+
         <select name="room_id">
             <option></option>
-            <option selected value="1">桜の間</option>
-            <option value="2">松の間</option>
-            <option value="3">竹の間</option>
-            <option value="4">梅の間</option>
+            <option selected value="1">桜</option>
+            <option value="2">松</option>
+            <option value="3">竹</option>
+            <option value="4">梅</option>
         </select>
         <br>
         <br>
@@ -25,6 +36,7 @@
         <input type="time" name="end_time" value="23:00">
         <br>
         <br>
+
         <!-- エラー表示 -->
         @if($errors->any())
             <div style="color:red;">
@@ -35,6 +47,7 @@
             </div>
             <br>
         @endif
+
         <button type="submit">予約する</button>
     </form>
 </body>

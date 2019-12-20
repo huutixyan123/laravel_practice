@@ -11,19 +11,19 @@ class Reservation extends Model
     // Scope
     public function scopeWhereHasReservation($query, $start, $end) {
 
-        $query->where(function($q) use($start, $end) { // 解説 - 1
+        $query->where(function($q) use($start, $end) {
 
             $q->where('start_at', '>=', $start)
                 ->where('start_at', '<', $end);
 
         })
-        ->orWhere(function($q) use($start, $end) { // 解説 - 2
+        ->orWhere(function($q) use($start, $end) {
 
             $q->where('end_at', '>', $start)
                 ->where('end_at', '<=', $end);
 
         })
-        ->orWhere(function($q) use ($start, $end) { // 解説 - 3
+        ->orWhere(function($q) use ($start, $end) {
 
             $q->where('start_at', '<', $start)
                 ->where('end_at', '>', $end);

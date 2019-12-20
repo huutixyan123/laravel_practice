@@ -6,11 +6,14 @@ use Illuminate\Contracts\Validation\Rule;
 
 class ReservationRule implements Rule
 {
+    private $_room_id,
+            $_start_at,
+            $_end_at;
+
     /**
      * Create a new rule instance.
      *
      * @return void
-     *
      */
     public function __construct($room_id, $start_at, $end_at)
     {
